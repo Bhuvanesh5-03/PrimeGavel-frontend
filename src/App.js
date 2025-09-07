@@ -12,7 +12,7 @@ import TraderSignUp from './login/TraderSignup';
 import Forgotpass from './login/Forgotpass';
 import MyWinnings from './TraderPage/MyWinnings';
 import './css/App.css';
-import TraderPage from './TraderPage';
+import TraderPage from './TraderPage/TraderPage';
 import TodayAuction from './TraderPage/TodayAuction';
 function App() {
   return (

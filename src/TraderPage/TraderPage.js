@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { VerifyToken } from './TraderPage/VerifyToken.js';
-import background from './Images/background.png';
+import { VerifyToken } from './VerifyToken.js';
 
 const TraderPage = () => {
   const navi = useNavigate();
@@ -39,21 +38,7 @@ function handleTodayAuction() {
       }}
     >
       
-      <div 
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.4,  
-          zIndex: -1
-        }}
-      ></div>
-
+     
       <div className="rounded-5 container border w-50 shadow mt-5 mb-5 text-center traderPage bg-dark bg-opacity-50 p-4">
         <h3 className="text-white text-shadow">Welcome To Auction</h3>
         <div className="d-grid gap-3 m-5">
