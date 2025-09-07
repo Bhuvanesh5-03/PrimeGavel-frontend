@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
-import { VerifyToken } from "./VerifyToken.js";
+import { VerifyToken } from "./TraderPage/VerifyToken.js";
 
 export default function Auction() {
   const [timeLeft, setTimeLeft] = useState(0);
@@ -36,7 +36,7 @@ export default function Auction() {
 
   const socket = useMemo(() => {
     if (!verified) return null;
-    return io("http://localhost:5000", {
+    return io("https://primegavel-backend.onrender.com", {
       transports: ["websocket"],
       auth: { token: localStorage.getItem("Usertoken") || "" },
     });
@@ -62,7 +62,7 @@ export default function Auction() {
     if (!verified) return;
     const fetchAuctions = async () => {
       try {
-        const response = await fetch("http://localhost:5000/AuctionPage", {
+        const response = await fetch("https://primegavel-backend.onrender.com/AuctionPage", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("Usertoken")}`,
           },

@@ -15,7 +15,7 @@ const AuctionDetail = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/Count", {
+    fetch("https://primegavel-backend.onrender.com/Count", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ const AuctionDetail = () => {
       Image: img,
       Winner: ""
     };
-    fetch("http://localhost:5000/auctionDetail", {
+    fetch("https://primegavel-backend.onrender.com/auctionDetail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

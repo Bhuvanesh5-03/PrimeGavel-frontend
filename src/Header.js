@@ -10,7 +10,7 @@ const Header = () => {
 
   // logout function
   const logout = () => {
-    fetch(`http://localhost:5000/traderLogin/logout/${email}`, {
+    fetch(`https://primegavel-backend.onrender.com/traderLogin/logout/${email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 // auth.js
 export async function VerifyToken() {
   try {
-    const res = await fetch("http://localhost:5000/verifyToken", {
+    const res = await fetch("https://primegavel-backend.onrender.com/verifyToken", {
       method: "GET",
       headers: {
         "authorization": `Bearer ${localStorage.getItem("Usertoken")}`,

@@ -15,7 +15,7 @@ const MyWinnings = () => {
           return;
         }
 
-        const response = await fetch("http://localhost:5000/Winners", {
+        const response = await fetch("https://primegavel-backend.onrender.com/Winners", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

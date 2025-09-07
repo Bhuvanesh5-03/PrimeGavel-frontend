@@ -10,10 +10,10 @@ import Home from './Home';
 import Footer from './Footer';
 import TraderSignUp from './login/TraderSignup';
 import Forgotpass from './login/Forgotpass';
-import MyWinnings from './MyWinnings';
+import MyWinnings from './TraderPage/MyWinnings';
 import './css/App.css';
 import TraderPage from './TraderPage';
-import TodayAuction from './TodayAuction';
+import TodayAuction from './TraderPage/TodayAuction';
 function App() {
   return (
     <BrowserRouter>

@@ -8,7 +8,7 @@ const TodayAuction = () => {
   useEffect(() => {
     const fetchTodayAuction = async () => {
       try {
-        const response = await fetch("http://localhost:5000/TodayAuction", {
+        const response = await fetch("https://primegavel-backend.onrender.com/TodayAuction", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

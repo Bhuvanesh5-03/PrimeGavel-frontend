@@ -16,7 +16,7 @@ const Forgotpass = () => {
         e.preventDefault();
         const emailid = document.getElementById('email');
         if (emailid.value !== "") {
-            fetch("http://localhost:5000/traderLogin/forgotPassword", {
+            fetch("https://primegavel-backend.onrender.com/traderLogin/forgotPassword", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ emailid: emailid.value })
@@ -46,7 +46,7 @@ const Forgotpass = () => {
         const code = form.elements.code.value;
 
         if (confirm === password) {
-            fetch("http://localhost:5000/traderLogin/CheckCode", {
+            fetch("https://primegavel-backend.onrender.com/traderLogin/CheckCode", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

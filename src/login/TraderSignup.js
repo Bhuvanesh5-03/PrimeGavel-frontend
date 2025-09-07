@@ -23,7 +23,7 @@ const TraderSignup = () => {
         const name = e.target.name.value;
         const email = e.target.emailid.value;
         const password = e.target.pass.value;
-        fetch("http://localhost:5000/traderSignup", {
+        fetch("https://primegavel-backend.onrender.com/traderSignup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
