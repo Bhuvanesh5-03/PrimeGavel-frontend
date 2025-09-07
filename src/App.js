@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import AuctionDetail from './AuctionDetail';
+import AuctioneerLogin from './login/AuctioneerLogin';
+import Auction from './Auction';
+import Header from './Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Selection from './Selection';
+import TraderLogin from './login/TraderLogin';
+import Home from './Home';
+import Footer from './Footer';
+import TraderSignUp from './login/TraderSignup';
+import Forgotpass from './login/Forgotpass';
+import MyWinnings from './MyWinnings';
+import './css/App.css';
+import TraderPage from './TraderPage';
+import TodayAuction from './TodayAuction';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/Selection" element={<Selection />} />
+            <Route path="/AuctioneerLogin" element={<AuctioneerLogin />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/TraderPage" element={<TraderPage />} />
+            <Route path="/MyWinnings" element={<MyWinnings />} />
+            <Route path="/AuctionDetail" element={<AuctionDetail />} />
+            <Route path="/AuctionPage" element={<Auction />} />
+            <Route path="/TodayAuction" element={<TodayAuction />} />
+            <Route path="/TraderLogin" element={<TraderLogin />} />
+            <Route path="/ForgotPassword" element={<Forgotpass />} />
+            <Route path="/TraderSignUp" element={<TraderSignUp />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

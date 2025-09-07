@@ -1,0 +1,111 @@
+
+html {
+  scroll-behavior: smooth;
+}
+.banner {
+  background: linear-gradient(90deg, #00203f 0%, #005f73 50%, #0a9396 100%);
+  padding: 10px 0 20px;
+}
+
+.name {
+  color: white;
+  font-style: italic;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.list li a:hover {
+  color: #ffd700; 
+}
+
+.traderPage {
+   background: linear-gradient(90deg, #00203f 0%, #005f73 50%, #0a9396 100%);
+  padding: 10px 0 20px;
+}
+
+.text-shadow {
+  text-shadow: 1.5px 1px #111111;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;  
+  align-items: center;    
+  background-color: rgb(242, 234, 234);  
+  
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
+}
+
+.tcolor{
+    background: -webkit-linear-gradient(90deg, #00203f 0%, #005f73 50%, #0a9396 100%);
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color: transparent;
+}
