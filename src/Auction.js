@@ -17,7 +17,7 @@ export default function Auction() {
   const [auctionId, setAuctionId] = useState(null);
   const [productDetails, setProductDetails] = useState(null);
   const [error, setError] = useState(null);
-
+  const [participantsCount, setParticipantsCount] = useState(0);
   const navi = useNavigate();
   const myName = localStorage.getItem("emailid") || "You";
 
@@ -128,6 +128,10 @@ export default function Auction() {
       }, 3000);
     };
 
+    const onParticipants = ({ count }) => {
+      setParticipantsCount(count);
+    };
+
     socket.on("auction:state", onState);
     socket.on("auction:update", onUpdate);
     socket.on("auction:end", onEnd);
@@ -135,6 +139,7 @@ export default function Auction() {
       setError(err.message || "Auction error");
       console.error("Auction error:", err);
     });
+    socket.on("auction:participants", onParticipants);
 
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
@@ -151,8 +156,9 @@ export default function Auction() {
       socket.off("auction:update");
       socket.off("auction:end");
       socket.off("auction:error");
+      socket.off("auction:participants");
     };
-  }, [socket, auctionId, currentIndex, auctionItems, myName, placeBid]); // ✅ Add placeBid to the dependency array
+  }, [socket, auctionId, currentIndex, auctionItems, myName, placeBid]);
 
   if (loading) {
     return <div className="text-center mt-5"><h4>Verifying token...</h4></div>;
@@ -175,6 +181,10 @@ export default function Auction() {
         <div className="col text-start fs-5 fw-semibold">
           Current Lot No.: <span className="fw-bold">{lotNumber}</span>
         </div>
+        <div className="text-center mt-3">
+          <span className="badge bg-primary">Traders participating: {participantsCount}</span>
+        </div>
+
         <div className="col text-end fs-5 fw-semibold">
           Remaining Lots: <span className="fw-bold">{remainingLots}</span>
         </div>
@@ -204,7 +214,7 @@ export default function Auction() {
           </p>
 
           <img
-            src={productDetails.image || "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg"}
+            src={productDetails.image}
             alt={productDetails.productName}
             className="img-fluid rounded shadow mt-4"
             style={{ maxWidth: "300px" }}
